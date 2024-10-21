@@ -60,113 +60,126 @@ namespace Assignment_2
         // Question 1: Find Missing Numbers in Array
         public static IList<int> FindMissingNumbers(int[] nums)
         {
-            try
+            int n = nums.Length;
+            List<int> missingNumbers = new List<int>();
+
+            // Mark numbers as negative for the index they represent
+            for (int i = 0; i < n; i++)
             {
-                // Write your code here
-                return new List<int>(); // Placeholder
+                int val = Math.Abs(nums[i]) - 1;
+                if (nums[val] > 0)
+                {
+                    nums[val] = -nums[val];
+                }
             }
-            catch (Exception)
+
+            // Find indices that are still positive
+            for (int i = 0; i < n; i++)
             {
-                throw;
+                if (nums[i] > 0)
+                {
+                    missingNumbers.Add(i + 1);
+                }
             }
+
+            return missingNumbers;
         }
 
         // Question 2: Sort Array by Parity
         public static int[] SortArrayByParity(int[] nums)
         {
-            try
+            int left = 0, right = nums.Length - 1;
+            while (left < right)
             {
-                // Write your code here
-                return new int[0]; // Placeholder
+                if (nums[left] % 2 > nums[right] % 2)
+                {
+                    int temp = nums[left];
+                    nums[left] = nums[right];
+                    nums[right] = temp;
+                }
+
+                if (nums[left] % 2 == 0) left++;
+                if (nums[right] % 2 == 1) right--;
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            return nums;
         }
 
         // Question 3: Two Sum
         public static int[] TwoSum(int[] nums, int target)
         {
-            try
+            Dictionary<int, int> numMap = new Dictionary<int, int>();
+            for (int i = 0; i < nums.Length; i++)
             {
-                // Write your code here
-                return new int[0]; // Placeholder
+                int complement = target - nums[i];
+                if (numMap.ContainsKey(complement))
+                {
+                    return new int[] { numMap[complement], i };
+                }
+                numMap[nums[i]] = i;
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            throw new ArgumentException("No two sum solution found.");
         }
 
         // Question 4: Find Maximum Product of Three Numbers
         public static int MaximumProduct(int[] nums)
         {
-            try
-            {
-                // Write your code here
-                return 0; // Placeholder
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            Array.Sort(nums);
+            int n = nums.Length;
+            return Math.Max(nums[0] * nums[1] * nums[n - 1], nums[n - 3] * nums[n - 2] * nums[n - 1]);
         }
 
         // Question 5: Decimal to Binary Conversion
         public static string DecimalToBinary(int decimalNumber)
         {
-            try
-            {
-                // Write your code here
-                return "101010"; // Placeholder
-            }
-            catch (Exception)
-            {
-                throw;
-            }
+            return Convert.ToString(decimalNumber, 2);
         }
 
         // Question 6: Find Minimum in Rotated Sorted Array
         public static int FindMin(int[] nums)
         {
-            try
+            int left = 0, right = nums.Length - 1;
+            while (left < right)
             {
-                // Write your code here
-                return 0; // Placeholder
+                int mid = left + (right - left) / 2;
+                if (nums[mid] > nums[right])
+                {
+                    left = mid + 1;
+                }
+                else
+                {
+                    right = mid;
+                }
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            return nums[left];
         }
 
         // Question 7: Palindrome Number
         public static bool IsPalindrome(int x)
         {
-            try
+            if (x < 0 || (x % 10 == 0 && x != 0)) return false;
+
+            int reversed = 0;
+            while (x > reversed)
             {
-                // Write your code here
-                return false; // Placeholder
+                reversed = reversed * 10 + x % 10;
+                x /= 10;
             }
-            catch (Exception)
-            {
-                throw;
-            }
+
+            return x == reversed || x == reversed / 10;
         }
 
         // Question 8: Fibonacci Number
         public static int Fibonacci(int n)
         {
-            try
+            if (n <= 1) return n;
+            int a = 0, b = 1;
+            for (int i = 2; i <= n; i++)
             {
-                // Write your code here
-                return 0; // Placeholder
+                int temp = a + b;
+                a = b;
+                b = temp;
             }
-            catch (Exception)
-            {
-                throw;
-            }
+            return b;
         }
     }
 }
