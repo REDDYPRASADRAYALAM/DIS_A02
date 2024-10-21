@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Priya\\Downloads\\DIS_A02\\ISM6225_Spring_2024_Assignment_2\\ISM6225_Spring_2024_Assignment_2.csproj",
+      "projectUniqueName": "C:\\Users\\Priya\\Downloads\\DIS_Assignment_02\\ISM6225_Spring_2024_Assignment_2\\ISM6225_Spring_2024_Assignment_2.csproj",
       "projectName": "ISM6225_Spring_2024_Assignment_2",
-      "projectPath": "C:\\Users\\Priya\\Downloads\\DIS_A02\\ISM6225_Spring_2024_Assignment_2\\ISM6225_Spring_2024_Assignment_2.csproj",
+      "projectPath": "C:\\Users\\Priya\\Downloads\\DIS_Assignment_02\\ISM6225_Spring_2024_Assignment_2\\ISM6225_Spring_2024_Assignment_2.csproj",
       "packagesPath": "C:\\Users\\Priya\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Priya\\Downloads\\DIS_A02\\ISM6225_Spring_2024_Assignment_2\\obj\\",
+      "outputPath": "C:\\Users\\Priya\\Downloads\\DIS_Assignment_02\\ISM6225_Spring_2024_Assignment_2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -66,24 +66,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "downloadDependencies": [
-          {
-            "name": "Microsoft.AspNetCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Host.win-x64",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.NETCore.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          },
-          {
-            "name": "Microsoft.WindowsDesktop.App.Ref",
-            "version": "[7.0.20, 7.0.20]"
-          }
-        ],
         "frameworkReferences": {
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
